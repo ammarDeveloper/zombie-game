@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: hidden;
+}
+
+.game-body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-background{
+    background-image: url(/images/bg.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-size: 100vw 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over {
+    background-color: #c2d7e9;
+    display: inline;
+    z-index: 2;
+    padding: 40px;
+    border-radius: 20px;
+    font-family: cursive;
+    font-size: 40px;
+    border: 5px solid aquamarine;
+    visibility: hidden;
+    position: relative;
+    bottom: 100px;
+    animation: game_over 5s;
+}
+
+@keyframes game_over {
+    0%{
+        font-size: 0px;
+    }
+     100%{
+         font-size: 40px;
+     }
+}
+
+.score {
+    position: absolute;
+    background-color: #c2d7e9;
+    top: 10px;
+    right: 10px;
+    padding: 7px;
+    border-radius: 7px;
+    font-family: cursive;
+    font-size: small;
+    border: 2px solid aquamarine;
+}
+
+.char{
+    background-image: url(/images/char.png);
+    width: 93px;
+    height: 121px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 65px;
+    bottom: 45px;
+    transform: scale(1, 1);
+}
+
+.zoombie {
+    background-image: url(/images/zombie-48812.png);
+    width: 95px;
+    height: 148px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 45px;
+    right: 45vw;
+}
+
+.zoombie-move{
+    animation: zoombie-move 2s linear infinite;
+}
+
+.animateChar{
+    animation: jump 0.6s linear;
+}
+
+@keyframes jump {
+    0%{
+        bottom: 45px;
+    }
+
+    50%{
+        bottom: 240px;
+    }
+
+    100%{
+        bottom: 45px;
+    }
+}
+
+@keyframes zoombie-move {
+    0% {
+        right: 0;
+    }
+
+    100%{
+        right: 100vw;
+    }
+}
+
+.window-err {
+    position: absolute;
+    width: 100vh;
+    background-image: url(/images/images.jpg);
+}
